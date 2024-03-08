@@ -56,7 +56,10 @@ const Index = () => {
             </Button>
           </VStack>
         </form>
-        <Text cursor="pointer" mt={4} onClick={() => setIsLoggingIn(!isLoggingIn)}>
+        <Button onClick={() => navigate("/settings")} colorScheme="blue" mt={4}>
+          Settings
+        </Button>
+        <Text cursor="pointer" mt={2} onClick={() => setIsLoggingIn(!isLoggingIn)}>
           {isLoggingIn ? "Need an account? Sign up" : "Already have an account? Login"}
         </Text>
       </Box>
