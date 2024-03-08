@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Container, FormControl, FormLabel, Heading, Input, useToast, VStack, Text } from "@chakra-ui/react";
 
 const Index = () => {
@@ -8,6 +9,7 @@ const Index = () => {
   const [username, setUsername] = useState("");
   const toast = useToast();
 
+  const navigate = useNavigate();
   const handleAuth = async (event) => {
     event.preventDefault();
     const url = `https://backengine-pkys.fly.dev/${isLoggingIn ? "login" : "signup"}`;
@@ -23,6 +25,9 @@ const Index = () => {
 
       if (response.ok) {
         toast({ title: `Success!`, description: `You are now ${isLoggingIn ? "logged in" : "signed up"}.`, status: "success" });
+        if (isLoggingIn) {
+          navigate("/dashboard");
+        }
       } else {
         toast({ title: "Error", description: data.detail[0].msg, status: "error" });
       }
