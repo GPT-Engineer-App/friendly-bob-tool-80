@@ -45,8 +45,8 @@ const Dashboard = ({ userToken }) => {
       ) : apiKey ? (
         <Box w="100%" p={4}>
           <Heading mb={6}>Dashboard</Heading>
-          <Text>Welcome to your dashboard!</Text>
           <Text mt={4}>Your API Key: {apiKey}</Text>
+          <Text>Welcome to your dashboard!</Text>
         </Box>
       ) : (
         <Box w="100%" p={4}>
