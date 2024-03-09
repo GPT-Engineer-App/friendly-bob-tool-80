@@ -13,10 +13,15 @@ function Settings() {
         setUserData(data);
         setIsLoading(false);
       })
-      .catch((error) => {
+      .catch(async (error) => {
+        let errorMessage = error.toString();
+        if (error.response) {
+          const errorData = await error.response.json();
+          errorMessage = errorData.detail ? errorData.detail[0].msg : errorMessage;
+        }
         toast({
-          title: "Error fetching user data.",
-          description: error.toString(),
+          title: "Error",
+          description: errorMessage,
           status: "error",
           duration: 9000,
           isClosable: true,
