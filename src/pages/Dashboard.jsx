@@ -9,9 +9,6 @@ const Dashboard = () => {
         <Heading mb={6}>Dashboard</Heading>
         <Text>Welcome to your dashboard!</Text>
         {}
-        <Button onClick={() => navigate("/settings")} colorScheme="blue" mt={4}>
-          Settings
-        </Button>
       </Box>
     </Container>
   );
