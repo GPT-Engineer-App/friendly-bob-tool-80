@@ -44,7 +44,10 @@ const Dashboard = ({ userToken }) => {
   return (
     <Container centerContent>
       {isLoading ? (
-        <Spinner />
+        <>
+          <Spinner />
+          <Text>Loading API key and user info...</Text>
+        </>
       ) : apiKey ? (
         <Box w="100%" p={4}>
           <Heading mb={6}>Dashboard</Heading>
